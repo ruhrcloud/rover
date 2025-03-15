@@ -2,7 +2,7 @@
 
 [![Release](https://img.shields.io/github/v/release/ruhrcloud/rover)](https://github.com/ruhrcloud/rover/releases/latest)
 ![Go Version](https://img.shields.io/github/go-mod/go-version/ruhrcloud/rover/main?label=Go)
-[![Build](https://github.com/ruhrcloud/rover/actions/workflows/build.yml/badge.svg)](https://github.com/ruhrcloud/rover/actions/workflows/build.yml)
+[![CI](https://github.com/ruhrcloud/rover/actions/workflows/build.yml/badge.svg)](https://github.com/ruhrcloud/rover/actions/workflows/ci.yml)
 
 `rover` was created to bridge the gap for printers that don’t support WebDAV by fetching scan emails via IMAP and uploading the attachments directly to a WebDAV instance.
 This is especially useful since some cloud storage solutions like Nextcloud are built around WebDAV and by design do not support protocols like SMB or FTP.
@@ -16,6 +16,12 @@ go install github.com/ruhrcloud/rover/cmd/rover@latest
 ```
 
 ## Getting started
+
+```
+Usage of rover:
+  -config string
+        path to the config file (default "config.json")
+```
 
 ## Legal
 
