@@ -16,20 +16,20 @@ import (
 )
 
 type Imap struct {
-	Host string `json:host`
-	User string `json:user`
-	Pass string `json:pass`
+	Host string `json:"host"`
+	User string `json:"user"`
+	Pass string `json:"pass"`
 }
 
 type Webdav struct {
-	Baseurl string `json:baseurl`
-	User    string `json:user`
-	Pass    string `json:pass`
+	Baseurl string `json:"baseurl"`
+	User    string `json:"user"`
+	Pass    string `json:"pass"`
 }
 
 type Config struct {
-	Imap   Imap   `json:imap`
-	Webdav Webdav `json:webdav`
+	Imap   Imap   `json:"imap"`
+	Webdav Webdav `json:"webdav"`
 }
 
 func main() {
@@ -39,13 +39,13 @@ func main() {
 
 	f, err := os.Open(file)
 	if err != nil {
-		log.Fatal("Error opening config: %v", err)
+		log.Fatal("Error opening config:", err)
 	}
 	defer f.Close()
 
 	byt, err := io.ReadAll(f)
 	if err != nil {
-		log.Fatal("Error reading config: %v", err)
+		log.Fatal("Error reading config:", err)
 	}
 
 	var conf Config
