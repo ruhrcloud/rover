@@ -1,0 +1,8 @@
+.env
+rover
+go.work
+go.work.sum
+
+# macOS
+.DS_Store
+.fseventsd
