@@ -1,6 +1,6 @@
 # rover
 
-[![Release](https://img.shields.io/github/v/release/ruhrcloud/rover)](https://github.com/ruhrcloud/rover/releases/latest)
+[![Release](https://img.shields.io/github/v/release/ruhrcloud/rover?include_prereleases)](https://github.com/ruhrcloud/rover/releases/latest)
 ![Go Version](https://img.shields.io/github/go-mod/go-version/ruhrcloud/rover/main?label=Go)
 [![CI](https://github.com/ruhrcloud/rover/actions/workflows/ci.yml/badge.svg)](https://github.com/ruhrcloud/rover/actions/workflows/ci.yml)
 
