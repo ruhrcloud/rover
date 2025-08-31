@@ -1,0 +1,31 @@
+debug: false
+tasks:
+  - name: "johndoe"
+    from:
+      host: "mail.example.com"
+      user: "johndoe@example.com"
+      pass: "password"
+      mailbox: "INBOX"
+    to:
+      base_url: "https://cloud.example.com/remote.php/webdav/johndoe/"
+      user: "johndoe"
+      pass: "password"
+      # auth: bearer
+      # token: "TOKEN"
+    path: "/Attachments"
+    tags: ["personal", "mail"]
+    filter:
+      recipients: ["johndoe@example.com"]
+      extensions: ["pdf", "csv"]
+      seen: false
+    interval: "1m"
+    # Possible options are:
+    #   .UID: IMAP UID
+    #   .OrigBase: Filename without extension
+    #   .OrigExt: Extension with leading dot (e.g. ".pdf")
+    #   .Subject: Message subject
+    #   .Date: Message date like "2006-01-02"
+    #   .DateTime: Message date like "20060102-150405"
+    format: "{{ slug .Subject }}{{ .OrigExt }}"
+    # Mark message as "Seen" if at least one attachment is uploaded
+    mark_seen: true
