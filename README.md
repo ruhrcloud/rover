@@ -33,10 +33,11 @@ tasks:
     tags: ["personal", "mail"]
     filter:
       recipients: ["johndoe@example.com"]
-      seen: "false"
+      extensions: ["pdf", "csv"]
+      seen: false
     interval: "1m"
     format: "{{ slug .Subject }}{{ .OrigExt }}"
-    mark_seen: "false"
+    mark_seen: true
 ```
 
 ## Usage
