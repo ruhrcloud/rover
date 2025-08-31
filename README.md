@@ -15,12 +15,36 @@ If you prefer to build locally and have Go installed, you can get the latest ver
 go install github.com/ruhrcloud/rover/cmd/rover@latest
 ```
 
-## Getting started
+## Configuration
+```yaml
+debug: false
+tasks:
+  - name: "johndoe"
+    from:
+      host: "mail.example.com"
+      user: "johndoe@example.com"
+      pass: "password"
+      mailbox: "INBOX"
+    to:
+      base_url: "https://cloud.example.com/remote.php/webdav/johndoe"
+      user: "johndoe"
+      pass: "password"
+    path: "/Attachments"
+    tags: ["personal", "mail"]
+    filter:
+      recipients: ["johndoe@example.com"]
+      seen: "false"
+    interval: "1m"
+    format: "{{ slug .Subject }}{{ .OrigExt }}"
+    mark_seen: "false"
+```
+
+## Usage
 
 ```
 Usage of rover:
   -config string
-        path to the config file (default "config.json")
+        path to the config file (default "rover.yml")
 ```
 
 ## Legal
