@@ -1,4 +1,3 @@
-debug: false
 tasks:
   - name: "johndoe"
     from:
