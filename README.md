@@ -17,7 +17,6 @@ go install github.com/ruhrcloud/rover/cmd/rover@latest
 
 ## Configuration
 ```yaml
-debug: false
 tasks:
   - name: "johndoe"
     from:
@@ -46,6 +45,7 @@ tasks:
 Usage of rover:
   -config string
         path to the config file (default "rover.yml")
+  -verbose
 ```
 
 ## Legal
