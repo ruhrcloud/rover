@@ -8,14 +8,42 @@
 This is especially useful since some cloud storage solutions like Nextcloud are built around WebDAV and by design do not support protocols like SMB or FTP.
 
 ## Installation
-You can download pre-built binaries for Linux on the [releases](https://github.com/ruhrcloud/rover/releases) page.
+
+You can download pre-built binaries for Linux and macOS on the [releases](https://github.com/ruhrcloud/rover/releases) page.
 
 If you prefer to build locally and have Go installed, you can get the latest version of `rover` by running:
+
 ```
 go install github.com/ruhrcloud/rover/cmd/rover@latest
 ```
 
+## Usage
+
+```
+Usage of rover:
+  -config string
+    Path to the config file (default "rover.yml").
+
+  -verbose
+    Also show connection information. Useful for debugging.
+```
+
+With the below [configuration](https://github.com/ruhrcloud/rover/blob/main/rover.yml) running `rover` would look like this:
+
+```
+# rover
+2025/09/19 07:42:07 info [johndoe] starting task to run every 1m
+2025/09/19 07:43:07 info [johndoe] no messages matched criteria
+2025/09/19 07:43:07 info [johndoe] found 0 and uploaded 0 attachments
+[...]
+2025/09/19 08:12:07 info [johndoe] processed 1 and uploaded 1 attachment
+```
+
 ## Configuration
+
+This is an example configuration. Note that you can define multiple tasks to run concurrently.
+For more examples have a look in the [examples](https://github.com/ruhrcloud/rover/tree/main/examples) directory in this repository.
+
 ```yaml
 tasks:
   - name: "johndoe"
@@ -37,15 +65,6 @@ tasks:
     interval: "1m"
     format: "{{ slug .Subject }}{{ .OrigExt }}"
     mark_seen: true
-```
-
-## Usage
-
-```
-Usage of rover:
-  -config string
-        path to the config file (default "rover.yml")
-  -verbose
 ```
 
 ## Legal
